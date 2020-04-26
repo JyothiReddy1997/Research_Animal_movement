@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>Approach</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Lora|Merriweather:300,400" rel="stylesheet">
+
+</head>
+<body>
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+     <div class="container">
+          <div class="navbar-header">
+               <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+               </button>
+               <a href="index.html" class="navbar-brand">Project 1</a>
+          </div>
+          <div class="collapse navbar-collapse">
+               <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="Approach.html">Approach</a></li>
+                   <li><a href="Algorithms.html">Algorithms</a></li>
+                   <li><a href="features.html">Features</a></li>
+                   <li><a href="performance.html">Performance</a></li>
+                    <li><a href="future.html">Future</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="bibliography.html">Bibliography</a></li>
+               </ul>
+          </div>
+
+  </div>
+</div>
+<!-- Home Section -->
+<section id="home" class="about_bg bg">
+     <div class="overlay"></div>
+     <div class="container">
+          <div class="row">
+               <div class="col-md-12 col-sm-12">
+                    <h1>Approach</h1>
+               </div>
+
+          </div>
+     </div>
+</section>
+
+<section id="about">
+     <div class="container">
+          <div class="row">
+               <div class="col-md-offset-1 col-md-10 col-sm-12"> 
+                   
+                    <h3>Previous Approaches</h3>
+              <p align="justify">Generally, researches consider the video frames or images at constant intervals using software tools resembling to ImageJ to quantify the animal movement. This method consumes a lot of time as annotating each image crashes the process time. To attenuate this issue, automated video tracking systems were introduced in 1990s which provided more flexibility and greater spatio-temporal resolution <a href="bibliography.html#l1">[1]</a>. Noldus EthoVision software was initially used for detecting the mice movements later it was developed to analyze various creature movements such as zebrafish and miscellaneous insects. Free software substitutes like Ctrax program was developed for tracking positions of walking flie. Another tracking software called EthoWatcher was used to track mice but it had a drawback of not detecting multiple regions. Idtracker an open-source software was developed to track multiple objects in different videos. It deploys a tracking approach where the near future images in the video can be used to estimate the successive frames. But due to the computation complexity this software was unfit to process the videos. It is not ideal to use a single method to track animal movement as there are numerous cases that need to be handled in real-time. <br><br> </p>  
+                   <h3>Architecture</h3>
+                   <p align="justify">Firstly, a video of animal movement is taken. This video is then given as input to the video analysis module. In this module the interpretation of the raw movements of the animal will be collected. We cross check to see which is matching and then come to the results of how the animal movement is going to be. All this movement data is then sent to behavior analysis module where all the behavior categories are defined. After the system recognises using respective software tools it gives us the output
+                      
+                      
+                   <img src="images/architecture.png" class="img-responsive" alt="pipeline"><center>Fig: Flow chart of Animal movement detection architecture <a href="bibliography.html#l2">[2]</a></center> 
+                       <h3>Classification</h3>
+                   <p align="justify">
+                   In machine learning, especially supervised learning, the objective is to learn how the algorithms map inputs to outputs. In the context of image classification, the main objective is to train an algorithm that can process and label samples with species of animals. Convolutionary neural networks (CNNs) have dominated image classification in latest years, as shown in latest ImageNet Large Scale Visual Recognition Challenges (ILSVRC). CNNs consist of two primary parts linked together, a convolutionary part extracting local characteristics from images, and a fully connected part mapping the learned characteristics to outputs. CNNs do not rely on manually defined features. Instead, by updating its parameters during model practice, the network learns spatial characteristics by propagating mistakes from output to input.</p><br>
+                   <img src="images/cnn.png" class="img-responsive" alt="pipeline"><center><br>Fig: Architecture of Animal movement detection architecture <a href="bibliography.html#l3">[3]</a></center> 
+          <br>
+         </div>
+             
+              
+          </div>
+     </div>
+
+</section>
+   
+
+  
+<footer>
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-12">
+                    <p>Name : Jyothi Reddy Bhavanam <br>Net Id : tt3863 <br>Guidence : Lynne Grewe </p>
+               </div>            
+          </div>
+     </div>
+</footer>
+
+<!-- Back top -->
+<a href="#back-top" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+<!-- SCRIPTS -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.parallax.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Algorithms</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Lora|Merriweather:300,400" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+     <div class="container">
+          <div class="navbar-header">
+               <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+               </button>
+               <a href="index.html" class="navbar-brand">Project 1</a>
+          </div>
+          <div class="collapse navbar-collapse">
+               <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Approach.html">Approach</a></li>
+                    <li class="active"><a href="Algorithms.html">Algorithms</a></li>
+                   <li><a href="features.html">Features</a></li>
+                   <li><a href="performance.html">Performance</a></li>
+                   <li><a href="future.html">Future</a></li>
+                   <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="bibliography.html">Bibliography</a></li>
+               </ul>
+          </div>
+
+  </div>
+</div>
+
+<section id="home" class="about_bg bg">
+     <div class="overlay"></div>
+     <div class="container">
+          <div class="row">
+               <div class="col-md-12 col-sm-12">
+                    <h1>Algorithms</h1>
+               </div>
+
+          </div>
+     </div>
+</section>
+    
+    <section id="frame">
+     <div class="container">
+          <div class="row">
+               <div class="col-md-offset-1 col-md-10 col-sm-12">
+                <h3>Object tracking </h3>
+    <p align="justify">There are multiple techniques  Kalman Filter which show the motion of different animals that may not be captured in a solitary process model and Hungarian approach is used find the ideal destination paths of identified objects and use a gating approach to reject poor estimates. The latest accessible tracking program for animal behavior is ToxTrac. It has the competent to locate animals both on land and water. This program employ Kalman Filter to guess the animal direction or trajectories for the detected animals. It combines the existing trajectories to generate tracks. The goal of tracking problem which is also called as estimation of trajectory in a image plane, is to detect objects in video frames by utilizing priori information of the targets. The object tracking problem can be formulated as:<br></p>
+     
+              <div class="col-md-offset-1 col-md-10 col-md-10">
+                  <p align="justify">
+                      Let I = {I<sub>k</sub> : k ∈ N} represent the frames of a video sequence, with I<sub>k</sub> ∈ E<sub>I</sub> being the frame at time k, deﬁned in E<sub>I</sub>, the space of all possible images. Tracking a single object can be formulated as estimating the time-series: </p> 
+              <p><font size="4"><center><br>χ = {x<sub>k</sub> : k ∈N}</center></font></p>
+              <p align="justify"> over the set of discrete time instances indexed by k, based on information in I. The vectors x<sub>k</sub> ∈ E<sub>s</sub> are the states of the target and E<sub>s</sub> is the state space. The time series X is known as the trajectory of the target in E<sub>s</sub>. Information such as each animal's position and shape can be encoded in the state vector.</p>
+              <img src="images/1_about.png" class="img-responsive" alt="pipeline"><center>Fig: Multi stage object tracking pipeline in BioSense <a href="bibliography.html#l4">[4]</a> </center> 
+              </div>   </div>       
+    <div class="col-md-offset-1 col-md-10 col-sm-12">
+    <h3>Decting objects </h3>
+    <p>The purpose of object detection is to assess whether to classify each pixel in each frame as the foreground or the background in a method known as segmentation. This operation can be performed independently on each image or use the temporary information calculated from a sequence of frames to reduce the number of erroneous detections. The tracker executes object correspondance from one frame to the next once the pixels are detected in a frame. We have two common methods to help with foreground object segmentation from their respective backgrounds:</p> 
+    <div class="col-md-offset-1 col-md-10 col-md-10">
+    <p align="justify">
+        1. Grey Scaling : <br>This is the easiest and often most efficient type of segmentation available in most open-source softwares. This method takes a gray picture and conducts segmentation based on relative pixel intensities by evaluating whether they are above or below an intensity value identified by the user. Greay scale thresholding can be carried out as follows:</p> 
+        
+       <!-- server not accepting 
+        <p><font size="3"><center>
+        <div id="bracket-formula">
+            w<sub>i, j =</sub></div>
+<div id="bracket-curley">
+<span style="font-size:700%">{</span>
+</div>
+
+<div id="post-content">
+
+    <div id="blog-floater"></div>
+
+    <div id="blog-post-content-child">
+
+        <p><br><br>1, where I<sub>k</sub> (i, j) &ge; T </p>
+
+        <p>0, where I<sub>k</sub> (i, j) &lt; T </p>
+
+    </div>
+     
+</div>    </center></font></p>   -->
+       <center><img src="images/f.png"></center> 
+   <p align="justify">w<sub>i, j</sub> is the binary value assigned to the pixel present at coordinate (i,j) in image I<sub>k</sub> and T is a user-defined threshold with an intensity value between 0-255. After thresholding an image we get the output in the form of binary image with thick black line and white pixels which represent the background and fore ground objects respectively.<br>
+        2. Background Subtraction: <br> The intensity values vary with lighting so relying only on thresholding will not help. Therefore, we need to take subtraction into consideration where the comparision of distinction between subsequent frames and an original static background reference frame will yeild us with alternate intensity values.
+       detecting animals in the real world might want us to consider dynamic lighting condition to recognise.<br>
+       3. Rejecting erroneous detections:<br> Above discussed methods give good results yet we have a problem of noise in the form of unwanted objects or disjointed region of pixels. Without creating a unique appearance model for each object, we can reduce the false positive error by confidently discarding detected objects whose area is outside of a user defined size parameter determined at run-time.
+        </p> 
+          </div>  </div>
+
+ <div class="col-md-offset-1 col-md-10 col-sm-12">
+<h3>Tracking with the Adaptive Kalman Filter </h3>
+<p align="justify">Kalman Filter can be used to determine predictions of the object trajectories in correspondance to the new measurements and filter predictions when there is uncertinty in new measurements. The Kalman Filter addresses the general problem of trying to estimate the state x &isin; &lt; n of a controlled discrete time process governed by the equation of linear stochastic difference:</p>
+<font size="4"><center><br>x<sub>k </sub>= Ax<sub>k-1</sub> + Q<sub>k</sub></center></font>
+ <p align="justify">where state transition matrix A relates the state at the previous time step k−1 to the state at the current step k and Q represents the process noise matrix. For the case of modeling a kinematic first-order system that considers objects with xy position and velocity in a 2D space can be represented in matrix form by <a href="bibliography.html#l4">[4]</a>:
+     <center><img src="images/2_framework.png" class="img-responsive"></center></p>
+     <p align="justify">The Kalman Filter estimates a process state, recursively at some point and then gets feedback in the form of measurements that are often noisy. The Kalman Filter is updated through two sets of equations known prediction and correction. The state and covariance estimates are predicted from time step k-1 to step k in the forecast phase. The first step in the correction phase is to evaluate the Kalman gain K and then use a process measurement to develop a posteriori state estimate. The final stage is to calculate a covariance estimate for a posteriori mistake. </p>
+    <center><img src="images/kalman.png" class="img-responsive" alt="pipeline"> <br>Fig: Adaptive Kalman Filter <a href="bibliography.html#l5">[5]</a></center> <center></center> 
+            
+                  <h3>HOG Algoritm</h3>
+    <p align="justify"> A histogram of oriented gradients (HOG) is used in computer vision to detect animal movement in a video or picture. First the input is fed to the color normalization block.Color normalization is used for animal recognition on color images when it is important to remove all intensity values from the picture while preserving color values. Once this is done the next step is to compute the gradient. This is done in the gradient computation module. Once the magnitude of gradient is obtained we create cell histograms. The HOG descriptor is then the vector of the components of the normalized cell histograms from all of the block regions. These blocks typically overlap, meaning that each cell contributes more than once to the final descriptor. In the normalization module the histogram is normalized. Finally, the image goes to cascade classifier for classification
+of the object. HOG descriptor is suitable for animal detection in video or images due to some key advantages compared to other descriptors. First, it operates on local cells, so it is invariant to geometric and photometric transformations. Secondly, coarse (spatial) sampling, fine orientation sampling, and strong local photometric normalization allow different body movement of animals to be overlooked if they
+maintain a roughly upright position. </p>
+     <center><img src="images/hog_2.png" class="img-responsive" alt="hog_normalization"> <br>Fig: HOG Normalization <a href="bibliography.html#l5">[5]</a></center> <center></center> 
+      <br>
+              </div> 
+   </div>  
+   </div>  
+</section>
+ 
+<footer>
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-12">
+                    <p>Name : Jyothi Reddy Bhavanam <br>Net Id : tt3863 <br>Guidence : Lynne Grewe </p>
+               </div>            
+          </div>
+     </div>
+</footer>
+
+<!-- Back top -->
+<a href="#back-top" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+<!-- SCRIPTS -->
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.parallax.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>

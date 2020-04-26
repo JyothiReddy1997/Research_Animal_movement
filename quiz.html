@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>Quiz</title>
+
+<style>
+div#test{ padding:10px 40px 40px 40px; width:80%;}
+</style>
+<script type="text/javascript">
+var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct = 0;
+
+var questions = [
+  ["What is the first and foremost step in Image Processing?", "a. Image enhancement", "b. Image acquisition", "c. Image restoration", "B"],
+  ["Which image processing technique is fast, precise and flexible?", "a. Optical", "b. Photographic", "c. Digital", "C"],
+  ["What is pixel?", "a. Pixel is the elements of a digital image", "b. Pixel is the elements of an analog image", "c. Pixel is the cluster of a digital image", "A"],
+  ["The number of grey values are integer powers of:", "4", "2", "8", "B"]
+  ];
+// get element id by function 
+function get(x){
+  return document.getElementById(x);
+}
+function renderQuestion(){
+  test = get("test");
+  if(pos >= questions.length){
+    test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2> <br> Answers <br>"
++"<br>Question 1: <b>b</b> <br>Image acquisition is the first process in image processing. Generally, the image acquisition stage involves preprocessing, such as scaling.<br>"
++"<br>Question 2: <b>c</b><br>An Image is a collection of individual points referred as pixel, thus a Pixel is the element of a digital image.<br>"
++"<br> Question 3: <b>a</b><br>An Image is a collection of individual points referred as pixel, thus a Pixel is the element of a digital image.<br>"
++"<br>Question 4: <b>b</b><br>The gray values are interpreted as the power of number of colors. In monochromatic image the number of colors are 2.";
+   get("test_status").innerHTML = "Test completed";
+    // resets the variable to allow users to restart the test so when you refresh you can restart the quiz
+    pos = 0;
+    correct = 0;
+    // stops rest of renderQuestion function running when quiz is completed
+    return false;
+  }
+  get("test_status").innerHTML = " Question "+(pos+1)+" of "+questions.length;
+  question = questions[pos][0];
+  chA = questions[pos][1];
+  chB = questions[pos][2];
+  chC = questions[pos][3];
+  test.innerHTML = "<h3>"+question+"</h3>";
+  test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+  test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
+  test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br><br>";
+  test.innerHTML += "<button onclick='checkAnswer()'>Submit Answer</button>";
+}
+function checkAnswer(){
+  choices = document.getElementsByName("choices");
+  for(var i=0; i<choices.length; i++){
+    if(choices[i].checked){
+      choice = choices[i].value;
+    }
+  }
+  // checks if answer matches the correct choice
+  if(choice == questions[pos][4]){
+    //each time there is a correct answer this value increases
+    correct++;
+  }
+  // changes position of which character user is on
+  pos++;
+  // then the renderQuestion function runs again to go to next question
+  renderQuestion();
+}
+window.addEventListener("load", renderQuestion, false);
+</script>
+
+<!--Styles-->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Lora|Merriweather:300,400" rel="stylesheet">
+
+</head>
+<body>
+<!-- Navigation section  -->
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+     <div class="container">
+
+          <div class="navbar-header">
+               <a href="index.html" class="navbar-brand">Project 1</a>
+          </div>
+          <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Approach.html">Approach</a></li>
+                   <li><a href="Algorithms.html">Algorithms</a></li>
+                  <li><a href="features.html">Features</a></li>
+                  <li><a href="performance.html">Performance</a></li>
+                    <li><a href="future.html">Future</a></li>
+                    <li class="active"><a href="quiz.html">Quiz</a></li>
+                    <li><a href="bibliography.html">Bibliography</a></li>
+               </ul>
+          </div>
+  </div>
+</div>
+<section id="home" class="quiz bg">
+     <div class="overlay"></div>
+     <div class="container">
+          <div class="row">
+               <div class="col-md-12 col-sm-12">
+                    <h1>Ready for some Questions?</h1>
+               </div>
+          </div>
+     </div>
+</section>
+
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-12">
+                    <h2 id="test_status"></h2>
+                   <div id="test"></div> 
+                    <span></span>
+               </div>
+
+          </div>
+     </div>
+
+
+<footer>
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-12">
+                    <p>Name : Jyothi Reddy Bhavanam <br>Net Id : tt3863 <br>Guidence : Lynne Grewe </p>
+               </div>            
+          </div>
+     </div>
+</footer>
+
+<!-- Back top -->
+<a href="#back-top" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+<!-- SCRIPTS -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.parallax.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
